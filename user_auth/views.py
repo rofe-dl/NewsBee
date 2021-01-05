@@ -12,14 +12,61 @@ login_html_dir = "user_auth/login.html"
 register_html_dir =  "user_auth/register.html"
 
 def get_countries():
-    country_codes = dict()
-    with open("countries.txt") as f:
-        for line in f:
-            current_line = line.strip().split(':')
-            country_codes[current_line[0]] = current_line[1]
+    return {
+        'Argentina':'ar',
+        'Australia':'au',
+        'Austria':'at',
+        'Belgium':'be',
+        'Brazil':'br',
+        'Bulgaria':'bg',
+        'Canada':'ca',
+        'China':'cn',
+        'Colombia':'co',
+        'Czech Republic':'cz',
+        'Egypt':'eg',
+        'France':'fr',
+        'Germany':'de',
+        'Greece':'gr',
+        'Hong Kong':'hk',
+        'Hungary':'hu',
+        'India':'in',
+        'Indonesia':'id',
+        'Ireland':'ie',
+        'Israel':'il',
+        'Italy':'it',
+        'Japan':'jp',
+        'Latvia':'lv',
+        'Lithuania':'lt',
+        'Malaysia':'my',
+        'Mexico':'mx',
+        'Morocco':'ma',
+        'Netherlands':'nl',
+        'New Zealand':'nz',
+        'Nigeria':'ng',
+        'Norway':'no',
+        'Philippines':'ph',
+        'Poland':'pl',
+        'Portugal':'pt',
+        'Romania':'ro',
+        'Saudi Arabia':'sa',
+        'Serbia':'rs',
+        'Singapore':'sg',
+        'Slovakia':'sk',
+        'Slovenia':'si',
+        'South Africa':'za',
+        'South Korea':'kr',
+        'Sweden':'se',
+        'Switzerland':'ch',
+        'Taiwan':'tw',
+        'Thailand':'th',
+        'Turkey':'tr',
+        'UAE':'ae',
+        'Ukraine':'ua',
+        'United Kingdom':'gb',
+        'United States':'us',
+        'Venuzuela':'ve'
+    }
 
-    return country_codes
-    
 country_codes = get_countries()
 
 def index(request):
