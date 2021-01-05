@@ -84,8 +84,8 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'rofedl',
-        'USER': 'root',
+        'NAME': 'news_bee',
+        'USER': 'rofedl',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
         'HOST': 'rofedl.mysql.pythonanywhere-services.com',
         'PORT': '3306',
