@@ -133,6 +133,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = "/home/rofedl/NewsBee/static"
 
 #additional settings to change before deployment
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
