@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['NEWS_BEE_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -83,12 +83,12 @@ DATABASES = {
     # }
 
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
         'NAME': 'news_bee',
-        'USER': 'root',
-        'PASSWORD': os.environ['MYSQL_PASSWORD'],
+        'USER': 'rafid',
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
@@ -132,6 +132,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #additional settings i added before deployment
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
