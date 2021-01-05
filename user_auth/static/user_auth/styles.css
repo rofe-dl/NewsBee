@@ -7,6 +7,10 @@ html, body{
 }
 
 body {
-    background-color: #536a8f;
+    background-image: url("wallpaper.jpg");
     height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
