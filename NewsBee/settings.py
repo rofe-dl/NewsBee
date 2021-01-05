@@ -83,12 +83,12 @@ DATABASES = {
     # }
 
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'news_bee',
-        'USER': 'rafid',
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'USER': 'root',
+        'PASSWORD': os.environ['MYSQL_PASSWORD'],
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#additional settings i added before deployment
+#additional settings to change before deployment
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
