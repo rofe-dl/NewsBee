@@ -1,0 +1,113 @@
+#top{
+    background-color: darkslategrey;
+    background: rgba(255,255,255,0.5);
+    color:#3d5e8f;
+    text-align:left;
+    font-size: 40px;
+
+    padding: 15px;
+    padding-bottom: 0;
+
+    height: auto;
+}
+
+#top_bar{
+    height: auto;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#top_bar h1{
+    margin: 0px;
+    margin-left: 20px;
+    flex: 4;
+}
+
+#user_info{
+    font-size: 20px;
+    flex: 1;
+    text-align: right;
+}
+
+#user_info a{
+    text-decoration: underline;
+    color: black;
+}
+
+#user_info a:hover{
+    color:silver;
+}
+
+#nav_bar{
+    margin-top: 15px;
+    display: flex;
+    justify-content:center; /* justifies it right, only works with flex */
+}
+
+#nav_bar a {
+    background-color:#d3d7de;
+    float: right;
+    color: black;
+    box-shadow: 0 0 10px gray;
+
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    height: 25px;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#nav_bar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#nav_bar a.active{
+    background-color: #3d5e8f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color:white;
+}
+
+@media screen and (max-width: 900px) {
+    #top_bar h1{
+        font-size: 60px;
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+    #user_info{
+        text-align: center;
+    }
+
+    #nav_bar{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    #top_bar h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #user_info{
+        font-size: 12px;
+    }
+
+    #nav_bar a {
+        font-size: 12px;
+        height: 12px;
+        padding: 7px 9px;
+    }
+
+    #nav_bar a.active, #nav_bar a{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+

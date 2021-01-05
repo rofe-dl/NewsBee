@@ -1,0 +1,48 @@
+{% extends "mainapp/layout.html" %}
+{% block b1 %}
+    {% load static %}
+    <link href="{% static 'mainapp/section_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'mainapp/display_box_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'mainapp/collection_beenews_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block b2 %}
+    {% block b3 %}
+    {% endblock %}
+
+    <div id="display_box">
+        {% for article in articles %}
+            {% block b4 %}
+            {% endblock %} 
+
+                <div class="news">
+                    <div id="news_text">
+                        <div id="news_details_top">
+                            <div id="news_source">Source : {{article.source}}</div>
+                            <div id="news_date">{{article.published_at}}</div>
+                        </div>
+
+                        <h1><a href="{{article.url}}">{{article.title}}</a></h1>
+                        <p>{{article.description}}</p>
+
+                        <div id="news_details_bottom">
+                            <div id="news_author">Author : {{article.author}}</div>
+                            <div id="news_category">Category : {{article.category}}</div>
+                        </div>
+
+                        {% block b5 %}
+                        {% endblock %}
+                    </div>
+                    
+                    <img src="{{article.image}}" onerror="this.style.display='none'" width="300">
+                </div>
+                <hr>
+            {% empty %}
+                <div class="news">
+                    <h1>No news found</h1>
+                </div>
+                <hr>            
+        {% endfor %}
+    </div>
+{% endblock %}
+

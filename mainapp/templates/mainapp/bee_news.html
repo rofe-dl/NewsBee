@@ -1,0 +1,47 @@
+{% extends "mainapp/section_layout.html" %}
+
+{% block b3 %}
+    <script>
+        document.getElementById("bee_news_btn").classList.add("active")
+
+        const myCollectionBtn = document.getElementById("my_collection_btn")
+        const newsBtn = document.getElementById("news_btn")
+
+        removeActive(myCollectionBtn)
+        removeActive(newsBtn)
+
+        function removeActive(element){
+            if (element.classList.contains("active")){
+                element.classList.remove("active")
+            }
+        }
+
+        document.getElementById("display_box").style.marginTop = "70px"
+        
+    </script>
+{% endblock %}
+
+{% block b4 %}
+    <div class="share_info">
+        <h1>{{ article.full_name }}</h1>
+        <h3>Date Shared : {{ article.datetime_shared }}</h3>
+    </div>
+    <p>{{ article.caption }}</p>
+{% endblock %}
+
+{% block b5 %}
+    <form action="{% url 'mainapp:share' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="source" value="{{ article.source }}">
+        <input type="hidden" name="published_at" value="{{ article.published_at }}">
+        <input type="hidden" name="url" value="{{ article.url }}">
+        <input type="hidden" name="image" value="{{ article.image }}">
+        <input type="hidden" name="title" value="{{ article.title }}">
+        <input type="hidden" name="description" value="{{ article.description }}">
+        <input type="hidden" name="author" value="{{ article.author }}">
+        <input type="hidden" name="category" value="{{ article.category }}">
+
+        <input type="submit" value="Share">
+    </form>
+{% endblock %}
+

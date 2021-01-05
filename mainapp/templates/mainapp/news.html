@@ -1,0 +1,44 @@
+{% extends "mainapp/section_layout.html" %}
+
+
+{% block b3 %}
+    <form class = "input_fields" action="{% url 'mainapp:search_news' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="keyword" placeholder="Search for news">
+        <input type="submit" value="Search">
+    </form>
+
+    <script>
+        document.getElementById("news_btn").classList.add("active")
+    
+        const beeNewsBtn = document.getElementById("bee_news_btn")
+        const myCollectionBtn = document.getElementById("my_collection_btn")
+    
+        removeActive(beeNewsBtn)
+        removeActive(myCollectionBtn)
+    
+        function removeActive(element){
+            if (element.classList.contains("active")){
+                element.classList.remove("active")
+            }
+        }
+    </script>
+{% endblock %}
+    
+{% block b5 %}
+    <form action="{% url 'mainapp:share' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="source" value="{{ article.source }}">
+        <input type="hidden" name="published_at" value="{{ article.published_at }}">
+        <input type="hidden" name="url" value="{{ article.url }}">
+        <input type="hidden" name="image" value="{{ article.image }}">
+        <input type="hidden" name="title" value="{{ article.title }}">
+        <input type="hidden" name="description" value="{{ article.description }}">
+        <input type="hidden" name="author" value="{{ article.author }}">
+        <input type="hidden" name="category" value="{{ article.category }}">
+
+        <input type="submit" value="Share">
+    </form>
+    
+{% endblock %}
+

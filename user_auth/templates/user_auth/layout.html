@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>News Bee</title>
+
+        <link href="{% static 'user_auth/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'user_auth/user_auth_styles.css' %}" rel="stylesheet">
+    </head>
+    
+    <body>
+
+        <div id="top">
+            <h1 id="heading">News Bee</h1>
+        </div>
+
+        <div id="mid">
+            <div id="auth_box">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

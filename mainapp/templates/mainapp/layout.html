@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>News Bee</title>
+        {% block b1 %}
+        {% endblock %}
+
+        <link href="{% static 'user_auth/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'mainapp/layout_styles.css' %}" rel="stylesheet">
+        
+    </head>
+    
+    <body>
+
+        <div id="top">
+            <div id="top_bar">
+                <h1>News Bee</h1>
+                <div id="user_info">
+                    Welcome, {{ request.user.username }} |
+                    <a href="{% url 'user_auth:logout' %}">Logout</a>
+                </div>
+            </div>
+            
+            <div id="nav_bar">
+                <a href="{% url 'mainapp:news' %}" class="active" id="news_btn">News</a>
+                <a href="{% url 'mainapp:bee_news' %}" id="bee_news_btn">Bee News</a>
+                <a href="{% url 'mainapp:my_collection' %}" id="my_collection_btn">My Collection</a>
+            </div>
+
+        </div>
+        
+        {% block b2 %}
+        {% endblock %}
+
+    </body>
+</html>

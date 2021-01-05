@@ -1,0 +1,83 @@
+#display_box{
+    margin-top: 10px;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    height: 1000px;
+
+    overflow-y:scroll;
+    background:rgba(0,0,0,0.5);
+    border-radius: 20px;
+    
+}
+
+.input_fields{
+    margin-top: 70px;
+    margin-bottom: 10px;
+    margin-left: 37%;
+    margin-right: 37%;
+
+    color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input_fields input[type="text"]{
+    flex: 9;
+    margin-left: 0;
+}
+
+.input_fields input[type="submit"]{
+    flex:1;
+    margin-right: 0;
+}
+
+.input_fields input[type="submit"]:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+input, select{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+hr {
+    width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+    #display_box{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .input_fields input, #input_fields select{
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .input_fields{
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .input_fields input[type="submit"]{
+        margin-right: 5px;
+    }
+
+    .input_fields input[type="text"]{
+        margin-left: 5px;
+    }
+
+    #nav_bar a {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+}
+

@@ -1,0 +1,50 @@
+{% extends "mainapp/layout.html" %}
+
+{% block b1 %}
+    {% load static %}
+    <link href="{% static 'mainapp/share_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'mainapp/display_box_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'mainapp/section_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block b2 %}
+    <div id="share_box">
+        <h1>Sharing</h1>
+
+        <div class="news">
+            <div id="news_text">
+                <div id="news_details_top">
+                    <div id="news_source">Source : {{ article.source }}</div>
+                    <div id="news_date">{{ article.published_at }}</div>
+                </div>
+
+                <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+                <p>{{ article.description }}</p>
+
+                <div id="news_details_bottom">
+                    <div id="news_author">{{ article.author }}</div>
+                    <div id="news_category">Category : {{ article.category }}</div>
+                </div>
+            </div>
+            
+            <img src="{{ article.image }}" onerror="this.style.display='none'" width="300">
+        </div>
+        
+        <form action="{% url 'mainapp:my_collection' %}" method="POST">
+            {% csrf_token %}
+            <textarea name="caption" placeholder="Enter your thoughts here ..."></textarea>
+            
+            <input type="hidden" name="source" value="{{article.source}}">
+            <input type="hidden" name="published_at" value="{{article.published_at}}">
+            <input type="hidden" name="url" value="{{article.url}}">
+            <input type="hidden" name="image" value="{{article.image}}">
+            <input type="hidden" name="title" value="{{article.title}}">
+            <input type="hidden" name="description" value="{{article.description}}">
+            <input type="hidden" name="author" value="{{article.author}}">
+            <input type="hidden" name="category" value="{{article.category}}">
+
+            <input type="submit" value="Share">
+        </form>
+        
+    </div>
+{% endblock %}

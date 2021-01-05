@@ -1,0 +1,49 @@
+#share_box{
+    margin-top: 50px;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    border-radius: 20px;
+    padding: 40px;
+    /* background-color:#e3e3e3; */
+    background:rgba(255,255,255,0.5);
+}
+
+#share_box > h1{
+    margin-left: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+textarea{
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input[type="submit"]{
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+
+    #share_box{
+        padding: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

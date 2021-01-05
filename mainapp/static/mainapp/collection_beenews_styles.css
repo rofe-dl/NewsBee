@@ -1,0 +1,26 @@
+.share_info{
+    margin: 30px;
+    display: flex;
+    color:white;
+}
+
+#display_box > p {
+    font-size: 18px;
+    margin: 30px;
+    color:white;
+}
+
+.share_info h1, .share_info h3{
+    flex: 1;
+}
+
+.share_info h3{
+    text-align: right;
+}
+
+@media screen and (max-width: 375px){
+    .share_info h1, .share_info h3{
+        font-size:20px;
+    }
+}
+
