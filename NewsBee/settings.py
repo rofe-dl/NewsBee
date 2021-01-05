@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['NEWS_BEE_SECRET_KEY']
+SECRET_KEY = os.getenv("NEWS_BEE_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -84,10 +84,10 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'news_bee',
+        'NAME': 'rofedl',
         'USER': 'root',
-        'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': 'localhost',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'rofedl.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
@@ -132,6 +132,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #additional settings to change before deployment
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True

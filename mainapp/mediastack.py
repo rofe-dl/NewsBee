@@ -4,7 +4,7 @@ import os
 
 mediastack_url = 'http://api.mediastack.com/v1/news?'
 limit = 25
-access_key = os.environ['MEDIASTACK_API_KEY']
+access_key = os.getenv('MEDIASTACK_API_KEY')
 country_code = "" #to be set before using the functions
 
 def get_result(entered_params):
