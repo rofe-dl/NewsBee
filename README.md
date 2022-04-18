@@ -6,18 +6,30 @@ NewsBee is a country-based news sharing website written in Python backed by Djan
 
 [Sign up and get a Mediastack API key here](https://mediastack.com/)
 
-Then put that key in
->NewsBee/user_auth/mediastack.py 
+1. Install MariaDB and the required development libraries for it
+    ```
+    // Development libraries
+    sudo apt install libmariadb-dev libmariadb-dev-compat libmariadbclient-dev
+    sudo apt install python3-dev
+    ```
+1. Create a database called `news_bee` in MariaDB
+1. In the `NewsBee` directory, make a `secrets.py` file and write down the secret variables required
+    ```
+    DJANGO_SECRET_KEY = '<any random string>'
+    DATABASE_PASSWORD = '<your mariadb database password>'
+    MEDIASTACK_KEY = '<your api key>'
+    ```
+    Then in the `settings.py` file, search for `DATABASES` and change the username there to the username of your database (usually `root`)
+1. Make a virtual environment of python and install dependencies
+    ```
+    python3 -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
 
-**Please install the packages in requirements.txt (in your virtual environment preferably) and create a database in your MySQL called "news_bee". Change the database details in NewsBee/settings.py according to your database configuration.**
+1. Migrate the changes to your database.
 
-To start the website, go to the command line and switch to your python virtual environment if you installed the packages in one. Then run:
-
-```
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
-
-
-**If you're on a Linux system, then use python3 instead of just python**
+    ```
+    python3 manage.py makemigrations
+    python3 manage.py migrate 
+    ```
+1. Run the server with `python3 manage.py runserver`
